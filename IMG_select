@@ -1,0 +1,12 @@
+import shutil
+import os
+data = open('D:\Documents\photos\\tor.txt', 'r')
+names_list = data.readlines()
+names = []
+for element in names_list:
+        names.extend(element.strip().split(';'))
+src = r"D:\Documents\photos\source"
+dest = r"D:\Documents\photos\destination"
+for name in names:
+    srcname = os.path.join(src, name)
+    shutil.move(srcname, dest)
